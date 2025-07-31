@@ -74,9 +74,10 @@ Each project must have a corresponding log file with:
 - Use frequent commits for rollback capability
 
 ### Individual Projects:
-- Each project directory gets its own git repository (`git init` in project dir)
+- Each project directory gets its own git repository (`git init` in project dir)  
 - Separate version control for each deployed application
 - Commit configurations, customizations, and deployment scripts per project
+- **Naming Convention**: Use `[project_name][ThinkPad]` for GitHub repositories (e.g., `n8n[ThinkPad]`)
 
 ### Git Commands for Deployment Workflow:
 
@@ -122,10 +123,14 @@ git branch -m main
 # Initial project commit
 git add . && git commit -m "deploy: initial {project-name} setup"
 
+# Create GitHub repo for project using naming convention  
+gh repo create "{project-name}[ThinkPad]" --private --description "ThinkPad deployment of {project-name}" --source=. --push
+
 # Update resource registry and create deployment log (in main repo)
 cd ..
 # Update files...
 git add . && git commit -m "registry: allocate resources for {project-name}"
+git push
 ```
 
 ### Manage existing deployments:
