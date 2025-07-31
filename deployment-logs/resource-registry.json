@@ -1,0 +1,21 @@
+{
+  "ports": {
+    "allocated": {},
+    "reserved": {
+      "22": "SSH",
+      "80": "HTTP",
+      "443": "HTTPS"
+    }
+  },
+  "domains": {
+    "allocated": {},
+    "subdomains": {}
+  },
+  "shared_services": {
+    "databases": {},
+    "message_queues": {},
+    "cache": {},
+    "storage": {}
+  },
+  "projects": {}
+}
